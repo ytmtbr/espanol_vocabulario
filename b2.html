@@ -138,7 +138,7 @@ function render(){
   const arr=filtered(), pages=Math.max(1,Math.ceil(arr.length/PAGE_SIZE));
   if(page>=pages) page=pages-1;
   const slice=arr.slice(page*PAGE_SIZE,(page+1)*PAGE_SIZE);
-  $('#count').textContent=`該当 ${arr.length}語 / 全$1000語`;
+  $('#count').textContent=`該当 ${arr.length}語 / 全${DATA.length}語`;
   $('#cards').innerHTML=slice.map(card).join('');
   $('#empty').style.display=arr.length?'none':'block';
   $('#pageInfo').textContent=`${page+1} / ${pages}`;
